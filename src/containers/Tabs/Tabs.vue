@@ -12,6 +12,9 @@
     <v-tab key="Chip">
       Chips
     </v-tab>
+    <v-tab key="Table">
+      Table
+    </v-tab>
   </v-tabs>
 
   <v-window v-model="value">
@@ -27,6 +30,9 @@
     <v-window-item key="Chip">
       <Chips />
     </v-window-item>
+    <v-window-item key="Table">
+      <Table />
+    </v-window-item>
   </v-window>
 </template>
 
@@ -36,6 +42,7 @@ import Buttons from '../Buttons/Buttons.vue';
 import Avatars from '../Avatars/Avatars.vue';
 import Checkboxes from '../Checkboxes/Checkboxes.vue';
 import Chips from "../Chips/Chips.vue";
+import Table from '../Table/Table.vue';
 
 export default {
   name: "Tabs",
@@ -48,7 +55,8 @@ export default {
     Chips,
     Buttons,
     Avatars,
-    Checkboxes
+    Checkboxes,
+    Table
   }
 }
 </script>
