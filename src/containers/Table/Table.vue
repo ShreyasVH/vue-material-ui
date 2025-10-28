@@ -1,24 +1,15 @@
 <template>
   <v-table style="text-align: center;">
     <thead>
-    <th v-for="columnName in columns">
-      {{columnName}}
-    </th>
+      <th v-for="columnName in columns">
+        {{columnName}}
+      </th>
     </thead>
 
     <tbody>
       <tr v-for="row in rows">
-        <td>
-          {{row.country}}
-        </td>
-        <td>
-          {{row.capital}}
-        </td>
-        <td>
-          {{row.currency}}
-        </td>
-        <td>
-          {{row.continent}}
+        <td v-for="column in columns">
+          {{row[column.toLowerCase()]}}
         </td>
       </tr>
     </tbody>
@@ -30,7 +21,7 @@ export default {
   name: "Table",
   data () {
     return {
-      columns: ['Country', 'Capital', 'Currency', 'Component'],
+      columns: ['Country', 'Capital', 'Currency', 'Continent'],
       rows: [
         {
           country: 'India',
