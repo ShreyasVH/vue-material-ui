@@ -3,13 +3,11 @@
     Show Loader
   </v-btn>
 
-  <div v-if="visible" v-on:click="hideLoader">
-    <v-dialog v-model="visible" width="100" transition="fade-transition">
-      <v-card class="d-flex justify-center align-center" height="100" style="background-color: transparent; box-shadow: none;">
-        <v-progress-circular indeterminate color="primary" size="48" />
-      </v-card>
-    </v-dialog>
-  </div>
+  <v-dialog v-model="visible" width="100" transition="fade-transition" persistent>
+    <v-card class="d-flex justify-center align-center" height="100" style="background-color: transparent; box-shadow: none;" v-on:click="hideLoader">
+      <v-progress-circular indeterminate color="primary" size="48" />
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
