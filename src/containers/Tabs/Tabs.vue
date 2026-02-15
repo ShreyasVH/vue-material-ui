@@ -18,6 +18,10 @@
     <v-tab key="Loader">
       Loader
     </v-tab>
+
+    <v-tab key="Card">
+      Card
+    </v-tab>
   </v-tabs>
 
   <v-window v-model="value">
@@ -39,6 +43,9 @@
     <v-window-item key="Loader">
       <Loader />
     </v-window-item>
+    <v-window-item key="Card">
+      <Card />
+    </v-window-item>
   </v-window>
 </template>
 
@@ -50,6 +57,7 @@ import Checkboxes from '../Checkboxes/Checkboxes.vue';
 import Chips from "../Chips/Chips.vue";
 import Table from '../Table/Table.vue';
 import Loader from '../Loader/Loader.vue';
+import Card from '../Card/Card.vue';
 
 export default {
   name: "Tabs",
@@ -64,7 +72,8 @@ export default {
     Avatars,
     Checkboxes,
     Table,
-    Loader
+    Loader,
+    Card
   }
 }
 </script>
