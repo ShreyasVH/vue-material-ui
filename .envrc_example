@@ -1,0 +1,8 @@
+# node 25.8.1 path
+export PATH=
+
+export VITE_HOST=
+export VITE_PORT=
+export VITE_ALLOWED_HOSTS=
+
+export PORT=
