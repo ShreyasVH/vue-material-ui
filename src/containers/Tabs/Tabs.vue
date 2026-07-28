@@ -22,6 +22,9 @@
     <v-tab key="Card">
       Card
     </v-tab>
+    <v-tab key="Snackbar">
+      Snackbar
+    </v-tab>
   </v-tabs>
 
   <v-window v-model="value">
@@ -46,6 +49,9 @@
     <v-window-item key="Card">
       <Card />
     </v-window-item>
+    <v-window-item key="Snackbar">
+      <Snackbar />
+    </v-window-item>
   </v-window>
 </template>
 
@@ -58,6 +64,7 @@ import Chips from "../Chips/Chips.vue";
 import Table from '../Table/Table.vue';
 import Loader from '../Loader/Loader.vue';
 import Card from '../Card/Card.vue';
+import Snackbar from '../Snackbar/Snackbar.vue';
 
 export default {
   name: "Tabs",
@@ -73,7 +80,8 @@ export default {
     Checkboxes,
     Table,
     Loader,
-    Card
+    Card,
+    Snackbar
   }
 }
 </script>
