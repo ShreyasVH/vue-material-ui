@@ -15,7 +15,7 @@
     Show Warning
   </v-btn>
 
-  <v-snackbar v-model="visible" :color="type" :timeout="5000">
+  <v-snackbar v-model="visible" :color="type" :key="key" :timeout="5000">
     {{message}}
 
     <template v-slot:actions>
@@ -37,7 +37,8 @@ export default {
     return {
       visible: false,
       message: '',
-      type: ''
+      type: '',
+      key: ''
     }
   },
   mounted() {
@@ -46,6 +47,7 @@ export default {
       that.setLoaderValue(true)
       that.message = event.detail.message
       that.type = event.detail.type
+      that.key = event.detail.type + (new Date().getTime())
     });
 
     window.addEventListener('hide-snackbar', function(event) {
