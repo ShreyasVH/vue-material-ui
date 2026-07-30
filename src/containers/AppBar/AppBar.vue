@@ -3,6 +3,16 @@
       <template v-slot:prepend>
         <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
       </template>
+
+      <template v-slot:append>
+
+        <v-switch
+            color="secondary"
+            :label="mode === 'dark' ? 'Dark mode' : 'Light mode'"
+            @change="toggleMode"
+            v-model="isDark"
+        ></v-switch>
+      </template>
     </v-app-bar>
 
   <v-navigation-drawer
@@ -18,16 +28,38 @@
 </template>
 
 <script>
+import { useTheme } from 'vuetify'
+
 export default {
   name: "AppBar",
-  data () {
+  setup() {
+    const theme = useTheme();
+
     return {
-      drawerOpen: false
+      theme
+    }
+  },
+  data () {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return {
+      drawerOpen: false,
+      mode: prefersDark ? 'dark' : 'light'
     }
   },
   methods: {
     toggleDrawer () {
       this.drawerOpen = !this.drawerOpen;
+    },
+
+    toggleMode () {
+      const newMode = this.mode === 'dark' ? 'light' : 'dark';
+      this.mode = newMode;
+      this.theme.change(newMode);
+    }
+  },
+  computed: {
+    isDark () {
+      return this.mode === 'dark';
     }
   }
 }
