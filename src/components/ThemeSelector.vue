@@ -4,6 +4,7 @@
       :label="mode === 'dark' ? 'Dark mode' : 'Light mode'"
       @change="toggleMode"
       v-model="isDark"
+      hide-details
   ></v-switch>
 </template>
 
