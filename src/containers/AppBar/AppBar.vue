@@ -6,12 +6,7 @@
 
       <template v-slot:append>
 
-        <v-switch
-            color="secondary"
-            :label="mode === 'dark' ? 'Dark mode' : 'Light mode'"
-            @change="toggleMode"
-            v-model="isDark"
-        ></v-switch>
+        <ThemeSelector />
       </template>
     </v-app-bar>
 
@@ -28,38 +23,21 @@
 </template>
 
 <script>
-import { useTheme } from 'vuetify'
+import ThemeSelector from "../../components/ThemeSelector.vue";
 
 export default {
   name: "AppBar",
-  setup() {
-    const theme = useTheme();
-
-    return {
-      theme
-    }
+  components: {
+    ThemeSelector
   },
   data () {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     return {
-      drawerOpen: false,
-      mode: prefersDark ? 'dark' : 'light'
+      drawerOpen: false
     }
   },
   methods: {
     toggleDrawer () {
       this.drawerOpen = !this.drawerOpen;
-    },
-
-    toggleMode () {
-      const newMode = this.mode === 'dark' ? 'light' : 'dark';
-      this.mode = newMode;
-      this.theme.change(newMode);
-    }
-  },
-  computed: {
-    isDark () {
-      return this.mode === 'dark';
     }
   }
 }

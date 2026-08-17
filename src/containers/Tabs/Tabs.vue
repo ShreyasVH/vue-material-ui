@@ -25,6 +25,9 @@
     <v-tab key="Snackbar">
       Snackbar
     </v-tab>
+    <v-tab key="SearchSelect">
+      SearchSelect
+    </v-tab>
   </v-tabs>
 
   <v-window v-model="value">
@@ -52,6 +55,9 @@
     <v-window-item key="Snackbar">
       <Snackbar />
     </v-window-item>
+    <v-window-item key="SearchSelect">
+      <SearchSelectContainer />
+    </v-window-item>
   </v-window>
 </template>
 
@@ -65,6 +71,7 @@ import Table from '../Table/Table.vue';
 import Loader from '../Loader/Loader.vue';
 import Card from '../Card/Card.vue';
 import Snackbar from '../Snackbar/Snackbar.vue';
+import SearchSelectContainer from '../SearchSelectContainer/SearchSelectContainer.vue';
 
 export default {
   name: "Tabs",
@@ -81,7 +88,8 @@ export default {
     Table,
     Loader,
     Card,
-    Snackbar
+    Snackbar,
+    SearchSelectContainer
   }
 }
 </script>
